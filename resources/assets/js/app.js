@@ -37,7 +37,7 @@ const app = new Vue({
                     swal("Thanks, i'll let you know if/when I have them in.")
                 })
                 .catch(() => {
-                    swal("Sorry, someone already submitted with that email.")
+                    swal("Either that's not an email or someone already used that email.")
                 })
         },
 
@@ -47,7 +47,7 @@ const app = new Vue({
                     swal("Thanks, i'll let you know if/when I have them in.")
                 })
                 .catch(() => {
-                    swal("Sorry, someone already submitted with that email.")
+                    swal("Either that's not an email or someone already used that email.")
                 })
         },
     }
