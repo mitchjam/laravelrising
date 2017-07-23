@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+
+Route::post('sticker', function() {
+    App\Sticker::create(['email' => request('email')]);
+});
+
+Route::post('tattoo', function() {
+    App\Tattoo::create(['email' => request('email')]);
 });

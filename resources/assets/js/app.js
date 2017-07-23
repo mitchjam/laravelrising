@@ -15,8 +15,40 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+// Vue.component('example', require('./components/Example.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+
+    data: {
+        form: {
+            email: '',
+        }
+    },
+
+    mounted() {
+        //
+    },
+
+    methods: {
+        orderSticker() {
+            axios.post('/sticker', this.form)
+                .then(() => {
+                    swal("Thanks, i'll let you know if/when I have them in.")
+                })
+                .catch(() => {
+                    swal("Sorry, someone already submitted with that email.")
+                })
+        },
+
+        orderTattoo() {
+            axios.post('/tattoo', this.form)
+                .then(() => {
+                    swal("Thanks, i'll let you know if/when I have them in.")
+                })
+                .catch(() => {
+                    swal("Sorry, someone already submitted with that email.")
+                })
+        },
+    }
 });

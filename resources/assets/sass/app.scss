@@ -1,9 +1,85 @@
+$primary: #f4645f;
+$secondary: #69AED1;
+$dark: #333333;
+$spacer-sm: 10px;
+$spacer-md: 25px;
+$spacer-lg: 50px;
+$border-radius: 3px;
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+body * {
+    font-family: 'Lato', sans-serif; 
+    color: $dark;  
+    line-height: 1.42857143;
+    box-sizing: border-box;
+}
 
-// Variables
-@import "variables";
+.button {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 5px $spacer-sm;
+    background: $primary;
+    color: white; 
+    font-size: 1.3em;
+    border: 1px solid darken($primary, 15%);
+    border-radius: $border-radius;
+    box-shadow: none;
+}
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 50px;
+}
+
+.heading {
+    font-weight: lighter;
+
+    &--center {
+        text-align: center;
+    }
+
+    &--marginless {
+        margin: 0 0 0 0;
+    }
+}
+
+.sticker-image {
+    width: 190px;
+    margin-bottom: $spacer-lg;
+}
+
+input {
+    margin: 5px;
+    border: 1px solid lighten($dark, 60%);
+    box-shadow: none;
+    border-radius: $border-radius;
+    width: 100%;
+    font-size: 1em;
+}
+
+.purchase-buttons {
+    //
+}
+
+.sticker-button {
+    @extend .button;
+    &:hover {
+        background: darken($primary, 15%);
+    }
+}
+
+.tattoo-button {
+    @extend .button;
+    background: $secondary;
+    border: 1px solid darken($secondary, 15%);
+    &:hover {
+        background: darken($secondary, 15%);
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
