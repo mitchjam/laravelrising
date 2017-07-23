@@ -24,7 +24,8 @@
                 
                 <img class="sticker-image" src="{{ asset('images/sticker.png') }}">
                 
-                <input type="email" v-model="form.email" required>
+                <label style="align-self: flex-start;">Get yours.</label>
+                <input type="email" v-model="form.email" placeholder="Email..." required>
                 
                 <section class="purchase-buttons">
                     <button @click="orderSticker()" class="sticker-button">I <i class="fa fa-heart fa-inverse"></i> stickers</button>
