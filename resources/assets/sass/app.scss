@@ -50,12 +50,13 @@ body * {
 }
 
 input {
+    padding: 5px;
     margin: 5px;
     border: 1px solid lighten($dark, 60%);
     box-shadow: none;
     border-radius: $border-radius;
     width: 100%;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 .purchase-buttons {

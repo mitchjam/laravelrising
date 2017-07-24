@@ -24,7 +24,7 @@
                 
                 <img class="sticker-image" src="{{ asset('images/sticker.png') }}">
                 
-                <label style="align-self: flex-start;">Get yours.</label>
+                <small style="align-self: flex-start;">Red pill or blue? ...or both.</small>
                 <input type="email" v-model="form.email" placeholder="Email..." required>
                 
                 <section class="purchase-buttons">
