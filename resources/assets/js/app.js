@@ -23,6 +23,7 @@ const app = new Vue({
     data: {
         form: {
             email: '',
+            product: '',
         }
     },
 
@@ -31,24 +32,16 @@ const app = new Vue({
     },
 
     methods: {
-        orderSticker() {
-            axios.post('/sticker', this.form)
-                .then(() => {
-                    swal("Thanks, i'll let you know if/when I have them in.")
-                })
-                .catch(() => {
-                    swal("Either that's not an email or someone already used that email.")
-                })
-        },
+        order(product) {
+            this.form.product = product;
 
-        orderTattoo() {
-            axios.post('/tattoo', this.form)
+            axios.post('/order', this.form)
                 .then(() => {
-                    swal("Thanks, i'll let you know if/when I have them in.")
+                    swal('Thanks!', "Your vote has been noted.")
                 })
                 .catch(() => {
-                    swal("Either that's not an email or someone already used that email.")
+                    swal('Sorry', "Either that's not an email or someone already used that email.")
                 })
-        },
+        }
     }
-});
+})

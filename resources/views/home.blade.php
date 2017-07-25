@@ -25,11 +25,11 @@
                 <img class="sticker-image" src="{{ asset('images/sticker.png') }}">
                 
                 <small style="align-self: flex-start;">Red pill or blue? ...or both.</small>
-                <input type="email" v-model="form.email" placeholder="Email..." required>
+                <input type="email" v-model="form.email" name="email" placeholder="Email..." required>
                 
                 <section class="purchase-buttons">
-                    <button @click="orderSticker()" class="sticker-button">I <i class="fa fa-heart fa-inverse"></i> stickers</button>
-                    <button @click="orderSticker()" class="tattoo-button">I <i class="fa fa-heart fa-inverse"></i> tattoos</button>
+                    <button @click="order('sticker')" class="sticker-button">I <i class="fa fa-heart fa-inverse"></i> stickers</button>
+                    <button @click="order('tattoo')" class="tattoo-button">I <i class="fa fa-heart fa-inverse"></i> tattoos</button>
                 </section>
             </div>
         </div>

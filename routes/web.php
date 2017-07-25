@@ -16,18 +16,13 @@ Route::get('/', function () {
 });
 
 
-Route::post('sticker', function() {
+Route::post('order', function() {
     Validator::make(request()->all(), [
-        'email' => 'required|email',
+        'email' => 'required|email|unique:' . str_plural(request('product')),
+        'product' => 'required|in:sticker,tattoo',
     ])->validate();
 
-    App\Sticker::create(['email' => request('email')]);
-});
+    $productClass = 'App\\' . ucwords(request('product'));
 
-Route::post('tattoo', function() {
-    Validator::make(request()->all(), [
-        'email' => 'required|email',
-    ])->validate();
-
-    App\Tattoo::create(['email' => request('email')]);
+    $productClass::create(['email' => request('email')]);
 });
